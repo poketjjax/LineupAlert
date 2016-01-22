@@ -11,10 +11,10 @@ import requests
 def GetNewOutOfLineupPlayers():
 	# Get list of players who are sitting out that are already in the DB
 	try:
-		conn = psycopg2.connect("dbname=dingers_Dingers user=dingers_dingers host=198.58.94.152 password=")
+		conn = psycopg2.connect("dbname=dingers_Dingers user=dingers_dingers host=198.58.94.152 password=udunno11")
 		cur = conn.cursor()
-	except Exception as e:
-		print (e)
+	except:
+		print "Unable to connect to the database"
 		
 	cur.execute("""SELECT "PlayerName" FROM "LineupAlertOutPlayers" """)
 	
@@ -46,7 +46,7 @@ def GetNewOutOfLineupPlayers():
 	
 def SendAlerts(OutPlayers):
 	try:
-		conn = psycopg2.connect("dbname=dingers_Dingers user=dingers_dingers host=198.58.94.152 password=")
+		conn = psycopg2.connect("dbname=dingers_Dingers user=dingers_dingers host=198.58.94.152 password=udunno11")
 		cur = conn.cursor()
 	except:
 		print "Unable to connect to the database"
@@ -73,7 +73,7 @@ def SendMessage(playerInfo):
 	server = smtplib.SMTP("smtp.gmail.com", 587)
 	server.ehlo()
 	server.starttls()
-	server.login('lineupalert@gmail.com', 'NiceTryPatches')
+	server.login('lineupalert@gmail.com', 'lineup11')
 	server.sendmail(sender, receivers, message)         
 	server.close()	
 	
