@@ -7,7 +7,7 @@ from crontab import CronTab
 	# Function to find the first game time of the day
 	# A cron job will then be scheduled for this time
 	# This will be used to collect the rosters for every fantasy team
-	# since rosters generally lock after the first game of the day starts 
+	# Since rosters generally lock after the first game of the day starts 
 ###
 
 url = "http://gd2.mlb.com/components/game/mlb/year_{0}/month_{1}/day_{2}/master_scoreboard.json".format(datetime.now().year, '{:02d}'.format(datetime.now().month), '{:02d}'.format(datetime.now().day))
